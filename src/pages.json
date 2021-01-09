@@ -1,16 +1,116 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue",
+		"van-(.*)": "@/wxcomponents/van/$1/index.vue"
+	},
+	"pages": [
+
 		{
-			"path": "pages/index/index",
+			"path": "pages/tab_bar/home/index",
+			"style": {}
+		},
+		{
+			"path": "pages/tab_bar/cart/index"
+		},
+		{
+			"path": "pages/tab_bar/category/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/tab_bar/user/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "components/hlb-empty/hlb-empty",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/auth/auth",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/auth/register",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/goods/categrory/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/goods/list/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/search/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/goods/detail/index",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
 			}
 		}
+
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
+		"navigationBarTitleText": "汇利堡",
+		"navigationStyle": "custom",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/tab_bar/home/index",
+				"iconPath": "/static/icon/home.png",
+				"selectedIconPath": "/static/icon/home_active.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/tab_bar/category/index",
+				"iconPath": "/static/icon/home.png",
+				"selectedIconPath": "/static/icon/home_active.png",
+				"text": "分类"
+			},
+			{
+				"pagePath": "pages/tab_bar/cart/index",
+				"iconPath": "/static/icon/live.png",
+				"selectedIconPath": "/static/icon/live_active.png",
+				"text": "购物车"
+			},
+			{
+				"pagePath": "pages/tab_bar/user/index",
+				"iconPath": "/static/icon/live.png",
+				"selectedIconPath": "/static/icon/live_active.png",
+				"text": "个人中心"
+			}
+		]
 	}
 }
