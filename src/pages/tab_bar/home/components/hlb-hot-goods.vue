@@ -5,7 +5,7 @@
             <view class="hot-goods-button"></view>
         </view>
 
-        <u-waterfall v-if="hotGoodList.length" v-model="hotGoodList" ref="uWaterfall">
+        <u-waterfall v-if="hot_goods_list.length" v-model="hot_goods_list" ref="uWaterfall">
             <template v-slot:left="{leftList}">
                 <view class="hot-goods-warter" v-for="(item, index) in leftList" :key="index">
                     <!-- 警告：微信小程序中需要hx2.8.11版本才支持在template中结合其他组件，比如下方的lazy-load组件 -->
@@ -58,7 +58,7 @@
     } from '@/common/http.api.js'
     export default {
         props: {
-            hotGoodList: {
+            hot_goods_list: {
                 type: Array,
                 require: true
             }

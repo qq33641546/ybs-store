@@ -1,15 +1,18 @@
 <template>
 	<view class="app-container">
+		<!-- S 导航栏 -->
 		<u-navbar :is-back='false' back-text="返回" title="首页"></u-navbar>
+		<!-- E 导航栏 -->
+
+		<!-- S 首页内容 -->
 		<view class="app-content ">
 			<hlb-search></hlb-search>
-			<hlb-mileage></hlb-mileage>
-			<hlb-banner v-if="homeData.advertiseList" :banerList="homeData.advertiseList"></hlb-banner>
-			<hlb-categrory></hlb-categrory>
-			<hlb-new-goods v-if="homeData.newProductList" :newGoodsList="homeData.newProductList"></hlb-new-goods>
-			<hlb-hot-goods v-if="homeData.hotProductList" :hotGoodList="homeData.hotProductList"></hlb-hot-goods>
+			<hlb-banner v-if="index_data.banner" :baner_list="index_data.banner"></hlb-banner>
+			<hlb-categrory v-if="index_data.category_list" :category_list="index_data.category_list"></hlb-categrory>
+			<hlb-new-goods v-if="index_data.new_goods_list" :new_goods_list="index_data.new_goods_list"></hlb-new-goods>
+			<!-- <hlb-hot-goods v-if="index_data.hot_goods_list" :hot_goods_list="index_data.hot_goods_list"></hlb-hot-goods> -->
 		</view>
-
+		<!-- E 首页内容 -->
 	</view>
 </template>
 <script>
@@ -19,7 +22,6 @@
 	import hlbHotGoods from './components/hlb-hot-goods.vue'
 	import hlbNewGoods from './components/hlb-new-goods.vue'
 	import hlbMenu from './components/hlb-menu.vue'
-	import hlbMileage from './components/hlb-mileage.vue'
 
 	import {
 		mapMutations,
@@ -34,6 +36,7 @@
 		data() {
 			return {
 				index_data: {},
+				result: ['a', 'b'],
 				loading: true
 			}
 		},
@@ -44,7 +47,6 @@
 			hlbHotGoods,
 			hlbNewGoods,
 			hlbMenu,
-			hlbMileage,
 		},
 		computed: {
 			...mapState({
@@ -60,6 +62,9 @@
 				const data = await getIndexData()
 				this.index_data = data
 				uni.stopPullDownRefresh()
+			},
+			onChange(rows) {
+				console.log(rows);
 			}
 		},
 		onPullDownRefresh() {

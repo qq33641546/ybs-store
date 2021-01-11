@@ -6,7 +6,7 @@
         </view>
 
         <scroll-view scroll-x="true" class="scroll-content">
-            <li v-for="(item, index) in newGoodsList" :key="index" class="nav-item">
+            <li v-for="(item, index) in new_goods_list" :key="index" class="nav-item">
                 <view class="nav-item-content">
                     <u-lazy-load threshold="150" border-radius="10" :height=150 :image="item.pic" :index="index">
                     </u-lazy-load>
@@ -27,7 +27,7 @@
 <script>
     export default {
         props: {
-            newGoodsList: {
+            new_goods_list: {
                 type: Array
             }
         },

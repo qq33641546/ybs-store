@@ -1,7 +1,7 @@
 {
 	"easycom": {
 		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue",
-		"van-(.*)": "@/wxcomponents/van/$1/index.vue"
+		"van-(.*)": "@/wxcomponents/vant/$1/index"
 	},
 	"pages": [
 
@@ -10,67 +10,9 @@
 			"style": {}
 		},
 		{
-			"path": "pages/tab_bar/cart/index"
-		},
-		{
-			"path": "pages/tab_bar/category/index",
-			"style": {
-				"navigationStyle": "custom"
-			}
-		},
-		{
 			"path": "pages/tab_bar/user/index",
 			"style": {
 				"navigationStyle": "custom"
-			}
-		},
-		{
-			"path": "components/hlb-empty/hlb-empty",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/auth/auth",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/auth/register",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/goods/categrory/index",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/goods/list/index",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/search/index",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/goods/detail/index",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
 			}
 		}
 
@@ -92,18 +34,6 @@
 				"iconPath": "/static/icon/home.png",
 				"selectedIconPath": "/static/icon/home_active.png",
 				"text": "首页"
-			},
-			{
-				"pagePath": "pages/tab_bar/category/index",
-				"iconPath": "/static/icon/home.png",
-				"selectedIconPath": "/static/icon/home_active.png",
-				"text": "分类"
-			},
-			{
-				"pagePath": "pages/tab_bar/cart/index",
-				"iconPath": "/static/icon/live.png",
-				"selectedIconPath": "/static/icon/live_active.png",
-				"text": "购物车"
 			},
 			{
 				"pagePath": "pages/tab_bar/user/index",

@@ -1,6 +1,6 @@
 <template>
 	<view class="search-bar">
-		<u-search placeholder="请输入关键字" disabled="true" :action-style="searchTextStyle" @click="navToSearch"
+		<u-search placeholder="请输入关键字" disabled="true" :action-style="search_text_style" @click="navToSearch"
 			v-model="keyword"></u-search>
 	</view>
 </template>
@@ -15,7 +15,7 @@
 		},
 		data() {
 			return {
-				searchTextStyle: {
+				search_text_style: {
 					color: 'white',
 				}
 			}

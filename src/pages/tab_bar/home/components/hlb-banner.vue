@@ -1,13 +1,13 @@
 <template>
     <view class="wrap">
-        <u-swiper :list="banerList" name='pic' @click="navTo"></u-swiper>
+        <u-swiper :list="baner_list" name='image_url' @click="navTo"></u-swiper>
     </view>
 </template>
 
 <script>
     export default {
         props: {
-            banerList: {
+            baner_list: {
                 type: Array,
                 require: true
             }

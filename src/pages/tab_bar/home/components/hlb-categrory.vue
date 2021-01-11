@@ -5,7 +5,7 @@
             <view class="category-title-button" @tap="navToAllCategrory">全部分类></view>
         </view>
         <ul class="category-content u-skeleton ">
-            <li v-for="(item, index) in categoryList" :key="index" @tap="navToGoodList(item)" class="nav-item ">
+            <li v-for="(item, index) in category_list" :key="index" @tap="navToGoodList(item)" class="nav-item ">
                 <image class="u-skeleton-fillet" :src=item.icon mode="aspectFill">
                 </image>
                 <text>{{item.name}}</text>
@@ -16,30 +16,19 @@
 </template>
 
 <script>
-    import {
-        getCategoryList
-    } from '@/common/http.api.js'
     export default {
+        props: {
+            category_list: {
+                type: Array,
+                require: true
+            }
+        },
         data() {
             return {
-                categoryList: [],
                 loading: true
             }
         },
         methods: {
-            // 获取一级分类
-            initCategory() {
-                getCategoryList().then(res => {
-                    let list = res.filter((item, index) => {
-                        return index < 8 && item.showStatus == 1
-                    })
-                    this.categoryList = list
-                    setTimeout(() => {
-                        this.loading = false
-                    }, 500);
-                    console.log(list);
-                })
-            },
             navToGoodList(item) {
                 uni.navigateTo({
                     url: '/pages/goods/list/index?item=' + encodeURIComponent(JSON.stringify(item)),
@@ -50,13 +39,11 @@
             },
             navToAllCategrory() {
                 uni.navigateTo({
-                    url: '/pages/goods/categrory/index'
+                    url: '/pages/tab_bar/categrory/index'
                 });
             }
         },
-        created() {
-            this.initCategory()
-        },
+        created() {},
     }
 </script>
 

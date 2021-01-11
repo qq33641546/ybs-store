@@ -15,12 +15,11 @@ export function https(url, params, method) {
 					'token': store.state.user.token ? 'user ' + store.state.user.token : '',
 				},
 				success: (res) => {
+					console.log(res);
 					if (res.statusCode == 200) {
-						if (res.data.code == 200 || res.data.status == 1) {
+						if (res.data.errno == 0 || res.data.status == 1) {
 							console.log("服务端返回200");
 							// res为服务端返回值，可能有code，result等字段
-							// 这里对res.result进行返回，将会在this.$u.post(url).then(res => {})的then回调中的res的到
-							// 如果配置了originalData为true，请留意这里的返回值
 							resolve(res.data.data ? res.data.data : res.data)
 						} else if (res.data.code == 401) {
 							console.log("服务端返回401");
